@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#122536"/>
+      <stop offset="0.52" stop-color="#0b151f"/>
+      <stop offset="1" stop-color="#080d14"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="50%" cy="46%" r="58%">
+      <stop offset="0" stop-color="#27d978" stop-opacity=".24"/>
+      <stop offset=".58" stop-color="#18a85c" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#18a85c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="device" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a2c39"/>
+      <stop offset="1" stop-color="#101a25"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8affbd"/>
+      <stop offset=".48" stop-color="#38e783"/>
+      <stop offset="1" stop-color="#20a65d"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="0" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#e4ffed"/>
+      <stop offset="1" stop-color="#74f6a8"/>
+    </linearGradient>
+    <filter id="shadow" x="-.3" y="-.2" width="1.6" height="1.6">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="26" result="blur"/>
+      <feOffset dy="22" result="offset"/>
+      <feColorMatrix in="offset" type="matrix" values="0 0 0 0 0.02  0 0 0 0 0.35  0 0 0 0 0.17  0 0 0 .46 0" result="shadow"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#background)"/>
+  <rect width="1024" height="1024" fill="url(#aura)"/>
+
+  <!-- Subtle concentric traces suggest a live charging network. -->
+  <circle cx="512" cy="512" r="420" fill="none" stroke="#87f5b5" stroke-opacity=".055" stroke-width="2"/>
+  <circle cx="512" cy="512" r="365" fill="none" stroke="#87f5b5" stroke-opacity=".045" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <rect x="267" y="132" width="490" height="760" rx="112" fill="url(#device)" stroke="url(#rim)" stroke-width="20"/>
+    <rect x="298" y="163" width="428" height="698" rx="84" fill="none" stroke="#d4ffe5" stroke-opacity=".075" stroke-width="3"/>
+
+    <!-- Status display -->
+    <rect x="390" y="224" width="244" height="83" rx="28" fill="#09131c" stroke="#355364" stroke-width="5"/>
+    <circle cx="452" cy="265" r="10" fill="#42e887"/>
+    <circle cx="512" cy="265" r="10" fill="#42e887" fill-opacity=".58"/>
+    <circle cx="572" cy="265" r="10" fill="#42e887" fill-opacity=".28"/>
+
+    <!-- The bolt is the primary mark and stays legible at small icon sizes. -->
+    <circle cx="512" cy="535" r="184" fill="#37df7e" fill-opacity=".09"/>
+    <circle cx="512" cy="535" r="155" fill="none" stroke="#60efa0" stroke-opacity=".17" stroke-width="3"/>
+    <path d="M548 350 421 556h103l-47 167 151-226H523l25-147Z" fill="url(#bolt)" stroke="#d6ffe4" stroke-opacity=".32" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Live status bar -->
+    <rect x="390" y="783" width="244" height="17" rx="8.5" fill="#07130e"/>
+    <rect x="390" y="783" width="177" height="17" rx="8.5" fill="url(#rim)"/>
+    <circle cx="654" cy="791.5" r="8.5" fill="#49e88c"/>
+  </g>
+</svg>
